@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Board from "./components/Board";
+import Channel from "./components/Channel";
+import Sidebar from "./components/Sidebar";
+import { motherData } from "./data";
 
 function App() {
+  const [channels, setChannels] = useState([]);
+  const [title, setTitle] = useState('Enjoy the Game');
+
+  const setChannel = (text) => {
+    setChannels(motherData[text]);
+    setTitle(text);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <Sidebar setChannel={setChannel}/>
+      <Channel channels={channels} />
+      <Board title={title} />
     </div>
   );
 }
