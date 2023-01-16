@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 
 const ChannelItem = ({ text }) => {
