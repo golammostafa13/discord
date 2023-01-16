@@ -6,7 +6,7 @@ export default function Table() {
     <div className="flex flex-col mx-40 my-5">
       <div className="overflow-x-auto">
         <div className="p-1.5 w-full inline-block align-middle">
-          <div className="overflow-hidden border rounded-lg">
+          <div className="overflow-hidden border">
             <table className="min-w-full text-center">
               <thead className="bg-gray-50">
                 <tr>
