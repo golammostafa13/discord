@@ -1,17 +1,35 @@
 import React from "react";
 import { BsSun } from "react-icons/bs";
 import { GiHummingbird } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
+import homeClickSound from "../media/homeClick.mp3";
 
-const Navbar = ({ title }) => {
+const Navbar = ({ title, subTitle }) => {
+  const audio1 = new Audio(homeClickSound);
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    audio1.play();
+    navigate("/");
+  };
+
   return (
     <div className="bg-gray-700 shadow-md shadow-gray-800 flex justify-between items-center p-4">
       <div className="flex gap-4 items-center">
-        <button className="text-green-400 text-lg font-bold border-2 px-2 py-1 border-solid border-green-600 hover:bg-green-500 hover:text-white flex items-center gap-1">
-           <GiHummingbird size="28"/> Home
+        <button
+          className="text-green-400 text-lg font-bold border-2 px-2 py-1 border-solid border-green-600 hover:bg-green-500 hover:text-white flex items-center gap-1 focus:bg-green-500 focus:text-white"
+          onClick={handleHomeClick}
+        >
+          <GiHummingbird size="28" /> Home
         </button>
         <h2 className="text-gray-200 text-lg font-bold">
           #{title.toUpperCase()}
         </h2>
+        {subTitle && (
+          <h2 className="text-green-500 text-lg font-bold">
+            {` `} #{subTitle.toUpperCase()}
+          </h2>
+        )}
       </div>
       <div className="flex items-center">
         <BsSun
