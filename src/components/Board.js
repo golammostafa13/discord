@@ -28,6 +28,15 @@ const Board = ({ title, subTitle }) => {
         <Route path="/front-end" element={<Cards data="" />} />
         <Route path="/back-end" element={<Cards data="" />} />
         <Route path="/blog" element={<Cards data="" />} />
+
+        <Route path="/projects" element={<Cards data={uiUx} />} />
+        <Route path="/figma" element={<Cards data={uiUx} />} />
+        <Route path="/html-css" element={<Cards data="" />} />
+        <Route path="/tailwind" element={<Cards data="" />} />
+        <Route path="/javascript" element={<Cards data="" />} />
+        <Route path="/database" element={<Cards data="" />} />
+        <Route path="/front-end" element={<Cards data="" />} />
+        <Route path="/back-end" element={<Cards data="" />} />
       </Routes>
 
       {/* { title !== 'Enjoy the Game - Tic Tac Toe' ? <Table /> : <TicTacToe /> } */}
