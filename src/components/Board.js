@@ -6,10 +6,10 @@ import { Routes, Route } from "react-router-dom";
 import { personalInformation, permanentAddress, presentAddress, SSC, HSC, BSc, uiUx } from "../data";
 import Cards from "./Cards";
 
-const Board = ({ title, subTitle }) => {
+const Board = ({ title, subTitle, setTitle, setSubTitle }) => {
   return (
     <div className="w-10/12 bg-gray-700">
-      <Navbar title={title} subTitle={subTitle} />
+      <Navbar title={title} setTitle={setTitle} subTitle={subTitle} setSubTitle={setSubTitle} />
       <Routes>
         <Route path="/" element={<TicTacToe />} />
         <Route path="/profile" element={<Table data={personalInformation}/>} />

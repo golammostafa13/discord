@@ -4,12 +4,14 @@ import { GiHummingbird } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import homeClickSound from "../media/homeClick.mp3";
 
-const Navbar = ({ title, subTitle }) => {
+const Navbar = ({setTitle, title, subTitle, setSubTitle }) => {
   const audio1 = new Audio(homeClickSound);
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
     audio1.play();
+    setTitle("Enjoy The Game-Tic Tac Toe");
+    setSubTitle("");
     navigate("/");
   };
 

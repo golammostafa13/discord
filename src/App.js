@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Sidebar setChannel={setChannel} />
         <Channel channels={channels} setChannelItem={setChannelItem}/>
-        <Board title={title} subTitle={subTitle} />
+        <Board title={title} subTitle={subTitle} setTitle={setTitle} setSubTitle={setSubTitle} />
       </Router>
     </div>
   );
