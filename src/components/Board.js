@@ -5,13 +5,18 @@ import TicTacToe from "./TicTacToe";
 import { Routes, Route } from "react-router-dom";
 import { personalInformation, permanentAddress, presentAddress, SSC, HSC, BSc, uiUx } from "../data";
 import Cards from "./Cards";
+import SpinBox from "./SpinBox";
 
-const Board = ({ title, subTitle, setTitle, setSubTitle }) => {
+const Board = ({ setChannel, title, subTitle, setTitle, setSubTitle }) => {
   return (
-    <div className="w-10/12 bg-gray-700">
-      <Navbar title={title} setTitle={setTitle} subTitle={subTitle} setSubTitle={setSubTitle} />
+    <div className="absolute left-48 md:left-56 lg:left-80 lg:w-10/12 p-1 h-screen bg-gray-700">
+      <Navbar setChannel={setChannel} title={title} setTitle={setTitle} subTitle={subTitle} setSubTitle={setSubTitle} />
       <Routes>
         <Route path="/" element={<TicTacToe />} />
+        <Route path="/tic-tac-toe" element={<TicTacToe />} />
+        <Route path="/hai" element={<SpinBox />} />
+        <Route path="/snake" element={<TicTacToe />} />
+      
         <Route path="/profile" element={<Table data={personalInformation}/>} />
         <Route path="/personal" element={<Table data={personalInformation}/>} />
         <Route path="/permanent" element={<Table data={permanentAddress}/>} />

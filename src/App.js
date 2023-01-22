@@ -6,11 +6,13 @@ import { motherData } from "./data";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  const [channels, setChannels] = useState([]);
-  const [title, setTitle] = useState("Enjoy the Game - Tic Tac Toe");
+  const [channels, setChannels] = useState(motherData['games']);
+  const [title, setTitle] = useState("Enjoy the Game-Tic Tac Toe");
   const [subTitle, setSubTitle] = useState("");
+  const [activeIdx, setActiveIdx] = useState(0);
 
   const setChannel = (text) => {
+    setActiveIdx(0);
     setChannels(motherData[text]);
     setTitle(text);
     setSubTitle("");
@@ -22,8 +24,8 @@ function App() {
     <div className="flex">
       <Router>
         <Sidebar setChannel={setChannel} />
-        <Channel channels={channels} setChannelItem={setChannelItem}/>
-        <Board title={title} subTitle={subTitle} setTitle={setTitle} setSubTitle={setSubTitle} />
+        <Channel channels={channels} setChannelItem={setChannelItem} activeIdx={activeIdx} setActiveIdx={setActiveIdx} />
+        <Board setChannel={setChannel} title={title} subTitle={subTitle} setTitle={setTitle} setSubTitle={setSubTitle} />
       </Router>
     </div>
   );

@@ -53,7 +53,7 @@ function Board() {
       <div className="text-2xl flex justify-center text-white mb-2 uppercase">
         {status}
       </div>
-      <div className="flex flex-wrap shadow-lg">
+      <div className="flex shadow-lg">
         <div>
           {renderSquare(0)}
           {renderSquare(1)}

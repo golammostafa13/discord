@@ -10,7 +10,7 @@
            transition-all duration-300 cursor-pointer ease-linear;
   }
   .sidebar-tooltip {
-    @apply absolute left-14 m-2 p-2 w-auto font-bold text-xs 
+    @apply absolute z-10 left-16 m-2 p-2 w-auto font-bold text-xs 
     text-white bg-gray-900 transition-all duration-200 scale-0 origin-left
     rounded-md shadow-sm;
   }

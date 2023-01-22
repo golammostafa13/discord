@@ -4,12 +4,13 @@ import { GiHummingbird } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import homeClickSound from "../media/homeClick.mp3";
 
-const Navbar = ({setTitle, title, subTitle, setSubTitle }) => {
+const Navbar = ({setChannel, setTitle, title, subTitle, setSubTitle }) => {
   const audio1 = new Audio(homeClickSound);
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
     audio1.play();
+    setChannel('games');
     setTitle("Enjoy The Game-Tic Tac Toe");
     setSubTitle("");
     navigate("/");
@@ -17,18 +18,18 @@ const Navbar = ({setTitle, title, subTitle, setSubTitle }) => {
 
   return (
     <div className="bg-gray-700 shadow-md shadow-gray-800 flex justify-between items-center p-4">
-      <div className="flex gap-4 items-center">
+      <div className="flex flex-row gap-2 md:gap-4 items-center">
         <button
-          className="text-green-400 text-lg font-bold border-2 px-2 py-1 border-solid border-green-600 hover:bg-green-500 hover:text-white flex items-center gap-1 focus:bg-green-500 focus:text-white"
+          className="text-green-400 md:text-lg font-bold border-2 px-1 md:px-2 py-1 border-solid border-green-600 hover:bg-green-500 hover:text-white flex md:items-center justify-center gap-1 focus:bg-green-500 focus:text-white"
           onClick={handleHomeClick}
         >
-          <GiHummingbird size="28" /> Home
+          <GiHummingbird size="24" /> Home
         </button>
-        <h2 className="text-gray-200 text-lg font-bold">
+        <h2 className="text-gray-200 md:text-lg font-bold">
           #{title.toUpperCase()}
         </h2>
         {subTitle && (
-          <h2 className="text-green-500 text-lg font-bold">
+          <h2 className="text-green-500 md:text-lg font-bold">
             {` `} #{subTitle.toUpperCase()}
           </h2>
         )}
@@ -36,9 +37,9 @@ const Navbar = ({setTitle, title, subTitle, setSubTitle }) => {
       <div className="flex items-center">
         <BsSun
           size="24"
-          className="text-white cursor-pointer hover:text-orange-500 transition-all duration-300 mr-4"
+          className="text-white cursor-pointer hover:text-orange-500 transition-all duration-300  mx-2 md:mx-4"
         />
-        <div className="relative flex">
+        <div className="relative md:flex hidden md:visible">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
@@ -49,9 +50,9 @@ const Navbar = ({setTitle, title, subTitle, setSubTitle }) => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               ></path>
             </svg>

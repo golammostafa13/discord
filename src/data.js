@@ -12,6 +12,7 @@ export const motherData = {
     "Back-End",
   ],
   contact: ["Contact Details"],
+  games: ['Tic-Tac-Toe', 'Wordle', 'Snake Game']
 };
 
 export const personalInformation = {

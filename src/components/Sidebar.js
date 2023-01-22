@@ -7,8 +7,7 @@ import { CiLinkedin } from "react-icons/ci";
 const Sidebar = ({ setChannel }) => {
   return (
     <div
-      className="h-screen w-16 mx-auto fixed top-0 left-0 flex flex-col m-0 
-                      bg-gray-900 text-white items-center shadow-lg gap-5 justify-between"
+      className="h-screen sm:w-16 mx-auto fixed top-0 left-0 flex flex-col m-0 bg-gray-900 text-white items-center shadow-lg gap-5 justify-between"
     >
       <div>
         <SidebarIcons
